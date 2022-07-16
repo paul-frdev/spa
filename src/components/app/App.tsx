@@ -4,7 +4,7 @@ import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { queryClient } from '../../reactQuery/queryClient';
 import { theme } from '../../theme/theme';
-import { Header } from '../Header';
+import { Header } from './Header';
 import { Routers } from './Routers';
 
 

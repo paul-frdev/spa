@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Flex,
@@ -14,15 +15,19 @@ import { GiFlowerPot } from 'react-icons/gi';
 import { GrClose } from 'react-icons/gr';
 import { ImMenu } from 'react-icons/im';
 
-import { Links } from './app/shared/constants';
-import { NavLink } from './common/NavLInk';
-import { userUser } from './user/hooks/useUser';
+import { Links } from './shared/constants';
+import { NavLink } from '../common/NavLInk';
+import { userUser } from '../user/hooks/useUser';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../auth/useAuth';
 
 
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = userUser();
+  const history = useNavigate();
+  const auth = useAuth()
 
 
   return (
@@ -63,11 +68,15 @@ export const Header = () => {
             <HStack>
               {user ? (
                 <>
-                  <NavLink to={`/user/${user.id}`}>{user.email}</NavLink>
-                  <Button>Sign out</Button>
+                  <NavLink to={`/user/${user.id}`}>
+                    <Avatar width={50} height={50}>
+                      {user.email}
+                    </Avatar>
+                  </NavLink>
+                  <Button onClick={() => auth.signout()}>Sign out</Button>
                 </>
               ) : (
-                <Button>Sign in</Button>
+                <Button onClick={() => history('sign-in')}>Sign in</Button>
               )}
             </HStack>
           </Flex>
