@@ -1,0 +1,10 @@
+@media (max-width: 794px) {
+  .treatments {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .treatments > div {
+    margin-inline-start: 0 !important;
+  }
+}
+

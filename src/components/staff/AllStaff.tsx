@@ -3,6 +3,7 @@ import { ReactElement } from 'react';
 import { useTreatments } from '../treatments/hooks/userTreatments';
 import { useStaff } from './hooks/useStaff';
 import { Staff } from './Staff';
+import styles from './staff.module.css';
 
 
 export const AllStaff = (): ReactElement => {
@@ -11,11 +12,11 @@ export const AllStaff = (): ReactElement => {
   console.log('staff', staff);
 
   return (
-    <Box>
+    <Box className={styles.allStaff}>
       <Heading mt={10}>
         Our Staff
       </Heading>
-      <HStack m={10} spacing={8} justify="center">
+      <HStack m={10} spacing={8} justify="center" className={styles.staffList}>
         {staff && staff.map(staffData => (
           <Staff key={staffData.id} staffData={staffData} />
         ))}

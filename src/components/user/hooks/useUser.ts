@@ -1,8 +1,8 @@
-import { axiosInstance, getJWTHeader } from '../../../../axiosInstance/index'
-import { User } from '../../../../types/types'
+import { axiosInstance, getJWTHeader } from '../../../axiosInstance/index'
+import { User } from '../../../types/types'
 import { AxiosResponse } from 'axios'
 import { useQuery, useQueryClient } from 'react-query'
-import { queryKeys } from '../../../../reactQuery/constants'
+import { queryKeys } from '../../../reactQuery/constants'
 
 interface useUserProps {
   user: User | null

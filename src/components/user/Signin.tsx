@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { ReactElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../../auth/useAuth';
+import { useAuth } from '../../auth/useAuth';
 
 interface FormProps {
   email: string;

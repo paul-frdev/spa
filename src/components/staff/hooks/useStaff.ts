@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { useQuery } from 'react-query'
-import { axiosInstance } from '../../../../axiosInstance'
-import { queryKeys } from '../../../../reactQuery/constants'
-import { IStaff } from './../../../../types/types'
+import { axiosInstance } from '../../../axiosInstance'
+import { queryKeys } from '../../../reactQuery/constants'
+import { IStaff } from '../../../types/types'
 
 interface UseStaffProps {
   staff: IStaff[]

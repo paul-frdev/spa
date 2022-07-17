@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react';
-import { IStaff as StaffType } from '../../../types/types';
-import { Card } from '../../common/Card';
+import { IStaff as StaffType } from '../../types/types';
+import { Card } from '../common/Card';
 
 
 interface StaffProps {

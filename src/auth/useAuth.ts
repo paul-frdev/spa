@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { axiosInstance } from '../axiosInstance'
 import { useCustomToast } from '../components/app/hooks/useCustomToast'
-import { userUser } from '../components/app/user/hooks/useUser'
+import { userUser } from '../components/user/hooks/useUser'
 import { User } from '../types/types'
 
 interface useAuthProps {

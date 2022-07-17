@@ -1,0 +1,21 @@
+.staffList {
+    margin: 0;
+}
+
+@media (max-width: 960px) {
+    .staffList {
+        flex-wrap: wrap;
+    }
+    .staffList > div:nth-child(3) {
+        margin-inline-start: 0;
+    }
+}
+
+@media (max-width: 707px) {
+    .staffList {
+        flex-direction: column;
+    }
+    .staffList > div {
+        margin-inline-start: 0 !important;
+    }
+}
