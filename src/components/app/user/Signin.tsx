@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { ReactElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../auth/useAuth';
+import { useAuth } from '../../../auth/useAuth';
 
 interface FormProps {
   email: string;
@@ -21,7 +21,7 @@ interface FormProps {
 
 export const SignIn = (): ReactElement => {
 
-  const [values, setValues] = useState<FormProps>({ email: 'test', password: 'test' });
+  const [values, setValues] = useState<FormProps>({ email: '', password: '' });
   const [dirty, setDirty] = useState({ email: false, password: false });
   const auth = useAuth()
 

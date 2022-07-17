@@ -17,7 +17,7 @@ import { ImMenu } from 'react-icons/im';
 
 import { Links } from './shared/constants';
 import { NavLink } from '../common/NavLInk';
-import { userUser } from '../user/hooks/useUser';
+import { userUser } from './user/hooks/useUser';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../auth/useAuth';
 

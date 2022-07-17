@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useCustomToast } from './hooks/useCustomToast';
-import { userUser } from '../user/hooks/useUser';
+import { userUser } from './user/hooks/useUser';
 
 
 interface ProtectedRoutesProps {

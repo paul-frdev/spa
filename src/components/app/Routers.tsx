@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import { ProtectedRoutes } from './ProtectedRoutes'
-import { Treatments } from '../treatments/Treatments'
+import { Treatments } from './treatments/Treatments'
 import { Calendar } from './appointments/Calendar'
 import { Home } from './Home'
 import { AllStaff } from './staff/AllStaff'
-import { SignIn } from '../user/Signin'
+import { SignIn } from './user/Signin'
 
 
 export const Routers = () => {
