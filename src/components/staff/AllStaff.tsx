@@ -9,7 +9,6 @@ import styles from './staff.module.css';
 export const AllStaff = (): ReactElement => {
   const { staff } = useStaff();
   const treatments = useTreatments();
-  console.log('staff', staff);
 
   return (
     <Box className={styles.allStaff}>

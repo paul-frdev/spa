@@ -31,4 +31,11 @@ export interface NewUser {
   token?: string;
 }
 
+export interface Appointment extends Id {
+  dateTime: Date;
+  treatmentName: string;
+  userId: number
+}
+
 export type User = NewUser & Id;
+
