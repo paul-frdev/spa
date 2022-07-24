@@ -58,7 +58,7 @@ export const Header = () => {
             </NavLink>
             <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link} to={`/${link}`}>
+                <NavLink key={link} to={`/${link.toLowerCase()}`}>
                   {link}
                 </NavLink>
               ))}

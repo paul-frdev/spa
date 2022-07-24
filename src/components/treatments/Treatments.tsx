@@ -1,4 +1,5 @@
 import { Box, Heading, HStack } from '@chakra-ui/react';
+import React from 'react';
 import { useTreatments } from './hooks/userTreatments'
 import { Treatment } from './Treatment';
 
@@ -7,7 +8,6 @@ import styles from './treatment.module.css';
 export const Treatments = () => {
 
   const treatments = useTreatments();
-
 
   return (
     <Box>

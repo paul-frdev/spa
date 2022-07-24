@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosResponse } from 'axios'
+import { AxiosResponse } from 'axios'
 import { axiosInstance } from '../axiosInstance'
 import { useCustomToast } from '../components/app/hooks/useCustomToast'
 import { userUser } from '../components/user/hooks/useUser'
@@ -31,7 +31,7 @@ export const useAuth = (): useAuthProps => {
       if (status === 400) {
         const title = 'message' in data ? data.message : 'Unauthorized'
         toast({ title, status: 'warning' })
-        return
+        return;
       }
 
       if ('user' in data && 'token' in data.user) {
@@ -39,7 +39,7 @@ export const useAuth = (): useAuthProps => {
         updateUser?.(data.user)
       }
     } catch (errorResponse) {
-      console.log(errorResponse);
+      console.log(errorResponse)
       toast({
         title: SERVER_ERROR,
         status: 'error',

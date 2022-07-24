@@ -1,9 +1,10 @@
 import { Icon, Stack, Text } from '@chakra-ui/react';
-import { ReactElement } from 'react';
+import React from 'react';
 import { GiFlowerPot } from 'react-icons/gi';
 import { BackgroundImage } from '../common/BackgroundImage';
 
 export const Home = (): JSX.Element => {
+
   return (
     <Stack align="center" justify="center" height="84vh">
       <BackgroundImage />

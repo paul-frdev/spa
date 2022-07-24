@@ -1,11 +1,12 @@
+import React, { Dispatch, SetStateAction } from 'react'
 import { getMonthYearDetails } from './../helpers'
 import { MonthYear } from './../types'
 import { AppointmentDateMap } from '../types'
 import { axiosInstance } from './../../../axiosInstance/index'
-import React, { Dispatch, SetStateAction } from 'react'
-import dayjs from 'dayjs'
 import { userUser } from '../../user/hooks/useUser'
-import { useQueryClient } from 'react-query'
+import { useQuery, useQueryClient } from 'react-query'
+import { queryKeys } from '../../../reactQuery/constants'
+import dayjs from 'dayjs'
 
 export const getAppointments = async (year: string, month: string): Promise<AppointmentDateMap> => {
   const { data } = await axiosInstance.get(`/appointments/${year}/${month}`)
@@ -16,7 +17,7 @@ export const getAppointments = async (year: string, month: string): Promise<Appo
 export interface UseAppointmentsProps {
   appointments: AppointmentDateMap
   monthYear: MonthYear
-  updateMonthYear: (monthIncrement: number) => void
+  updateMonthYear?: (monthIncrement: number) => void
   showAll: boolean
   setShowAll: Dispatch<SetStateAction<boolean>>
 }
@@ -32,7 +33,13 @@ export const useAppointments = (): UseAppointmentsProps => {
   const [showAll, setShowAll] = React.useState(false)
 
   const { user } = userUser()
-  const queryClien = useQueryClient()
+  const queryClient = useQueryClient()
+  const fallback = {}
 
-  return { monthYear, showAll, user }
+  const { data: appointments = fallback } = useQuery(
+    [queryKeys.appointments, monthYear.year, monthYear.month],
+    () => getAppointments(monthYear.year, monthYear.month),
+  )
+
+  return { monthYear, showAll, setShowAll, appointments }
 }
